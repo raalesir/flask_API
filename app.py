@@ -24,6 +24,11 @@ tasks = [
 
 @app.route('/todo/api/v1.0/tasks', methods=['GET'])
 def index():
+    """
+    Entry point
+    
+    :return:
+    """
     for task in tasks:
         task['uri'] = url_for('get_task', task_id=task['id'], _external=True)
     return jsonify({
